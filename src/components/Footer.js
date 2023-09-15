@@ -1,8 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../styles/Footer.css'
 
-function Footer() {
+function Footer(cart, updateCart) {
 	const [inputValue, setInputValue] = useState('')
+
+	// useEffect(() => {
+	// 	console.log(`Cette alerte s'affiche à chaque rendu du footer`);
+	// })	
+	// useEffect(() => {
+	// 	console.log(`Cette alerte s'affiche au premier rendu du footer`);
+	// }, [])
+	// useEffect(() => {
+	// 	console.log(`Cette alerte s'affiche la première fois et quand le panier est mis à jour`);
+	// }, [cart])
+
+	useEffect(() => {
+		return () => console.log(`Cette alerte s'affiche quand le footer est retiré du DOM`);
+	})
 	function handleInput(e) {
 		setInputValue(e.target.value)	
 	}
